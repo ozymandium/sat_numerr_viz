@@ -1,0 +1,12 @@
+---
+### YAML configuration file for MOOSCommClient ###
+#
+# DO NOT LEAVE UNCOMMENTED WHITESPACE IN THIS FILE!
+#
+################################################################################
+# z_______ measurment name to process from the MOOS stream
+desired_variables:
+- 'zpsrE'
+- 'zpsrN'
+- 'zRelPath_E'
+- 'zRelPath_N'
