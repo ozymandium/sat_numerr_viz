@@ -6,7 +6,10 @@
 ################################################################################
 # z_______ measurment name to process from the MOOS stream
 desired_variables:
-- 'zpsrE'
-- 'zpsrN'
-- 'zRelPath_E'
-- 'zRelPath_N'
+- 'zpsrNumObs'
+- 'zpsrX'
+- 'zpsrY'
+- 'zpsrZ'
+- 'zX'
+- 'zY'
+- 'zZ'

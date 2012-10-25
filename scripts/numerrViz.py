@@ -67,28 +67,20 @@ class MainWindow(QtGui.QMainWindow):
         
 
     # ##### Functions to receive updates from moos #####
-    @QtCore.Slot(tuple)
-    def onNumSat_upd(self, vel):
-        """
-        Handles new value for the follower velocity
-        go-to guy for the moos app
-        Currently only update the lcd.
-        """
-        # print('In LFviz.onFollVel_upd')
-        # self.vel = vel
-        # self.ui.velDisp_lcd.display(vel[2])
+    @QtCore.Slot(int)
+    def onNum_upd(self, num):
+        """   update the number of satellites - receive from moos    """
+        self.numsat = num
+        self.ui.render_area.update()
 
-        # self.fcrsENU = atan2(self.vel[0], self.vel[1])
-        # self.ui.render_area.update()
-        pass
-
-    @QtCore.Slot(list)
-    def onErr_upd(self, path):
+    @QtCore.Slot(float)
+    def onErr_upd(self, err):
         """
         Handles new relative (to follower) points for path
         updates distance and lat dev
         """
         pass
+        self.ui.lcdNumber.display(err)
     #     # print('In LFviz.onPath_upd')
     #     self.pathENU = path # will be converted to render area coords by ptolemy function, invoked by renderarea on paint event
     #     self.ui.render_area.update()

@@ -71,7 +71,6 @@ class RenderArea(QtGui.QWidget):
 
         painter.end()
 
-
     def getDataSnapshot(self):
         """"""
         self.renderWd = self.size().width() 
@@ -81,7 +80,6 @@ class RenderArea(QtGui.QWidget):
         self.scaleIncs = np.arange(1, 
                             self.mw.numsat_max*self.onesat_pix+self.onesat_pix, 
                             self.onesat_pix)
-
 
     def drawScale(self, painter):
         """draw numbers and tick marks"""
@@ -122,10 +120,8 @@ class RenderArea(QtGui.QWidget):
 
             num += int(1)
 
-
     def drawIndicator(self, painter):
         """draw the actual color bar"""
-        self.mw.numsat = int(input('number of satellites? '))
         if self.mw.numsat > self.mw.numsat_critical:
             painter.fillRect(0, self.scaleHt,
                              self.mw.numsat*self.onesat_pix, self.renderHt-self.scaleHt,
@@ -134,7 +130,6 @@ class RenderArea(QtGui.QWidget):
             painter.fillRect(0, self.scaleHt,
                              self.mw.numsat*self.onesat_pix, self.renderHt-self.scaleHt,
                              QtCore.Qt.red)
-
 
 
 if __name__ == '__main__':
