@@ -72,7 +72,7 @@ class MainWindow(QtGui.QMainWindow):
         """   update the number of satellites - receive from moos    """
         self.numsat = num
         self.ui.render_area.update()
-
+    
     @QtCore.Slot(float)
     def onErr_upd(self, err):
         """
