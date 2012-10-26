@@ -122,15 +122,18 @@ class RenderArea(QtGui.QWidget):
 
     def drawIndicator(self, painter):
         """draw the actual color bar"""
-        if self.mw.numsat > self.mw.numsat_critical:
+        if self.mw.numsat > self.mw.numsat_warning:
             painter.fillRect(0, self.scaleHt,
                              self.mw.numsat*self.onesat_pix, self.renderHt-self.scaleHt,
                              QtCore.Qt.green)
+        elif self.mw.numsat > self.mw.numsat_critical:
+            painter.fillRect(0, self.scaleHt,
+                             self.mw.numsat*self.onesat_pix, self.renderHt-self.scaleHt,
+                             QtCore.Qt.yellow)
         else:
             painter.fillRect(0, self.scaleHt,
                              self.mw.numsat*self.onesat_pix, self.renderHt-self.scaleHt,
                              QtCore.Qt.red)
-
 
 if __name__ == '__main__':
     raise Exception('Do not import this module directly')

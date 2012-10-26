@@ -58,12 +58,13 @@ class MainWindow(QtGui.QMainWindow):
         self.ui.render_area.mw = self
 
         ### Config
-        self.numsat_critical = 4
+        self.numsat_critical = 3
+        self.numsat_warning = 4
         self.numsat_max = 14
 
         ### Initialize display value s
         self.err = float(0.0)
-        self.numsat = int(5)
+        self.numsat = int(0)
         
 
     # ##### Functions to receive updates from moos #####
